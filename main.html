@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demystifying AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #0f1115;
+      --text: #e6e6e6;
+      --muted: #a0a4ab;
+      --accent: #4da3ff;
+      --border: #2a2f3a;
+      --card: #171a21;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+
+    p {
+      color: var(--text);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    /* Collapsible Sections */
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 15px 0;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--accent);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--accent);
+      outline: none;
+    }
+
+    summary::marker {
+      color: var(--accent);
+    }
+
+    details p {
+      margin-top: 10px;
+      color: var(--text);
+    }
+
+    /* Buttons */
+    .controls {
+      margin: 20px 0;
+    }
+
+    button {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>Demystifying AI</h1>
+    <p class="subtitle">
+      Understanding its limits, risks, and responsible use
+    </p>
+
+    <p>
+      Artificial intelligence has rapidly moved from a niche technological concept to a dominant force shaping modern life. Headlines alternately promise revolutionary breakthroughs or warn of existential threats, often portraying AI as something mysterious, autonomous, or even sentient. This framing obscures a more grounded reality, where limitations and risks are often overshadowed by the promise of capability. To navigate the growing presence of AI responsibly, we must demystify the technology, understand its risks, and make intentional choices about the role we allow it to play in our lives.
+	</p>
+
+	<p>At their core, AI systems are mathematical processes, not thinking entities. They don’t possess awareness, intent, or understanding, and they can only generate outputs derived from patterns already present in their training data. What appears to be creativity or reasoning is, in reality, the recombination of existing information according to statistical likelihoods.
+	</p>
+
+	<p>
+	This becomes clear when examining the different types of AI systems in use today. Let’s take a look at how a few of the most popular AI models operate.
+    </p>
+
+    <p>
+      To navigate its growing presence responsibly, we must demystify the technology, understand its risks, and make intentional choices about how we use it.
+    </p>
+
+    <div class="controls">
+      <button onclick="expandAll()">Expand All</button>
+      <button onclick="collapseAll()">Collapse All</button>
+    </div>
+
+    <h2>How AI Works</h2>
+	<h3>Large Language Models (LLMs)</h3>
+		<p>
+		These AI are focused on generating plausible text. Given a prompt, they are trained to find the next most likely word. By repeating this process iteratively, an LLM is able to piece together a full written response that sounds natural. Given that one word is generated at a time, the model does not know what the full response will be, and does not fact-check its statements. This leads to text that sounds confident, but isn’t necessarily correct - just likely to sound right based on the patterns in the training data.
+		</p>
+    <details>
+      <summary>Training</summary>
+      <p>
+        Part of a real sentence is provided, with a word missing. The model is trained to make a guess at what the most likely word is, then shown the real answer, and the model is updated so it’s more likely to guess correctly in the future. This process is repeated billions of times across massive datasets.
+      </p>
+    </details>
+
+    <details>
+      <summary>Computational Mechanisms</summary>
+      <ol>
+		<li>
+        When a user inputs a prompt, it is first broken down into smaller units called <b>tokens</b>. For the sake of explanation, we’ll assume that each word is a separate token, but in reality tokens can be fragments of words. Each token is pre-assigned a numerical value in the model’s dataset.
+
+		</li>
+      </ol>
+    </details>
+
+    <h2>Strengths and Limitations</h2>
+
+    <details>
+      <summary>Strengths</summary>
+      <p>
+        Pattern recognition, data transformation, and compressing large knowledge spaces into usable formats.
+      </p>
+    </details>
+
+    <details>
+      <summary>Limitations</summary>
+      <p>
+        Susceptibility to hallucinations, lack of fact-checking, and high sensitivity to prompt phrasing.
+      </p>
+    </details>
+
+    <h2>Risks</h2>
+
+    <details>
+      <summary>Environmental Impact</summary>
+      <p>
+        High energy consumption for training and inference, with limited transparency into actual resource usage.
+      </p>
+    </details>
+
+    <details>
+      <summary>Social Impact</summary>
+      <p>
+        Misinformation, degradation of information ecosystems, and over-reliance in education and professional work.
+      </p>
+    </details>
+
+    <h2>Recommendations</h2>
+
+    <details>
+      <summary>Intentional Use</summary>
+      <p>
+        Limit reliance, verify outputs, and prioritize maintaining core cognitive skills.
+      </p>
+    </details>
+
+    <div class="footer">
+      Interactive essay • Local HTML format • No external dependencies
+    </div>
+
+  </div>
+
+  <script>
+    function expandAll() {
+      document.querySelectorAll("details").forEach(d => d.open = true);
+    }
+
+    function collapseAll() {
+      document.querySelectorAll("details").forEach(d => d.open = false);
+    }
+  </script>
+</body>
+</html>
