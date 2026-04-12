@@ -115,7 +115,7 @@
 
     <h1>Demystifying AI</h1>
     <p class="subtitle">
-      Growth Letter - April 2026
+      Ryan Van Cleave - April 2026
     </p>
 
     <p>
@@ -191,10 +191,91 @@
 	While the results can feel conversational and coherent, the underlying mechanism is fundamentally a sophisticated form of pattern completion. In essence, LLMs are highly advanced word-guessing systems.
 	</p>
 
-    <h2>Strengths and Limitations</h2>
-
+	<h3>Image and Video Generation Models</h3>
+		<p>
+			These AI specialize in generating images from text. They are trained to take a set of randomized pixels, and treat it as a very blurry image. The processes involved allow the model to ‘unblur’ the image in a way that matches the desired target from the prompt.
+		</p>
+	  
+	<details>
+      <summary>Training</summary>
+      <p>
+        Two goals must be accomplished for an image generator to function. The model must learn to render images, and it must internalize the relationship between text and images in a way that allows it to generate a relevant image when prompted.
+      </p>
+    </details>
+	  
     <details>
-      <summary>Strengths</summary>
+      <summary>Computational Mechanisms</summary>
+		<p>
+			To begin training, a massive dataset of images with text descriptions is collected - this includes captions, tags, and metadata. For current models, this is essentially the entire content of the internet. (more on this later)
+		</p>
+
+	  <p>
+		  <b>Goal 1 - Predict Images</b>
+	  </p>
+      <ol>
+		<li>
+        	An image is chosen from the dataset, and noise is gradually added to it until it becomes pure noise. This process is called forward diffusion, and it’s repeated a few billion times.
+		</li>
+		<li>
+			The model is then shown a noisy image and a corresponding text prompt. It’s trained to predict the total noise that was added, and attempt to reconstruct the original image.
+		</li>
+      </ol>
+
+		<p>
+		  <b>Goal 2 - Encode Text-Image Relationships</b>
+	  </p>
+      <ol>
+		<li>
+        	Just like the LLM training, images can be broken up into parts and analyzed for patterns that provide context. In this case, tokens are pixels rather than (parts of) words. The color values of the pixels help inform the parameter values of the image, just as the words in the sentence help inform the parameter values of a sentence. A sentence beginning with the words “Once upon a time…” is very likely the beginning of a story. An image where the first four pixels are blue might be likely to depict a blue sky.
+		</li>
+		<li>
+			The dataset is arranged in a massive table, such that the images are on one axis, and the corresponding captions are on another. At this point, the data used for the images is random. Through training, it will be adjusted to usable values.
+
+		</li>
+		<li>
+			The diagonal of this table contains matching image-caption pairs. To correctly encode the context of the images, the model adjusts the image data so that it maximizes the similarities of the values along the diagonal, while minimizing the similarities elsewhere.
+		</li>
+
+      </ol>
+
+		<p>
+			With the combination of these goals accomplished, the model is able to infer what sort of image best matches the prompt being requested. It starts with random noise, and denoises the image in a way that matches the desired prompt.
+		</p>
+		<p>
+			Interestingly, generating an image is less computationally intensive than generating a text response, as the model does not need to iteratively add on one pixel at a time, in the way that it does with text.
+		</p>
+    </details>
+
+	<h3>Extractive AI</h3>
+		<p>
+			These AI are focused on retrieval rather than synthesis.The underlying context data is similar to that of an LLM, but responses are provided as excerpts rather than a generated string of text. These systems are quietly doing some important work in document analysis, where they can flag or extract from massive datasets for audits.
+		</p>
+
+	<h3>Specialized AI (Domain-Specific AI)</h3>
+	<p>
+		Specialized, narrow tools designed to meet specific needs - often for research or processes that benefit from pattern recognition. Being proprietary systems, they’re often a blend of techniques from the other AI forms, with datasets and training that is specific to their domain. A medical diagnostic tool that requires accuracy has a very different set of needs from a general AI that isn’t held to a similar standard.
+	</p>
+
+	</br>
+	
+	<p>
+		Importantly, these categories do not share identical processes, and progress in one area does not necessarily translate to another. The tendency to treat AI advancement as a single, unified trajectory often leads to exaggerated claims.
+	</p>
+	  
+	<p>
+		This distinction highlights an important limitation: AI does not understand information. It maps relationships within data. Its outputs are optimized for plausibility, not truth. As a result, these systems can produce responses that are fluent and confident but factually incorrect - a phenomenon often referred to as “hallucination.” They do not verify claims or distinguish between accurate and inaccurate information unless explicitly guided to do so through external tools or constraints. Additionally, their performance is highly sensitive to how prompts are phrased, meaning small changes in input can produce significantly different outputs.
+	</p>
+
+	<p>
+		Despite these limitations, AI systems offer meaningful strengths. They excel at recognizing patterns across large datasets, transforming information into different formats, and compressing complex knowledge into more accessible forms. However, these strengths must be weighed against their weaknesses, particularly when deployed at scale.
+	</p>
+
+	<p>
+		The risks associated with AI are difficult to quantify, in part due to limited transparency from the companies developing these systems. Clashing incentives further complicate the issue - some parties benefit from overstating AI’s capabilities while others overstate its environmental or social impacts. This uncertainty makes it challenging to form clear, evidence-based conclusions about its broader consequences.
+	</p>
+	  
+    <details>
+      <summary>Energy Usage</summary>
       <p>
         Pattern recognition, data transformation, and compressing large knowledge spaces into usable formats.
       </p>
@@ -233,7 +314,7 @@
     </details>
 
     <div class="footer">
-      Interactive essay • Local HTML format • No external dependencies
+      Stay Humble • Stay Hungry
     </div>
 
   </div>
