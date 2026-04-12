@@ -160,23 +160,28 @@
 		<li>
         	When a user inputs a prompt, it is first broken down into smaller units called <b>tokens</b>. For the sake of explanation, we’ll assume that each word is a separate token, but in reality tokens can be fragments of words. Each token is pre-assigned a numerical value in the model’s dataset.
 		</li>
+		  <img src="Tokenized.png">
 		<li>
 			These tokens are then converted into multidimensional vectors, where the values of each dimension encode meaning and usage into the token. These dimensions are known as <b>parameters</b>, and they can help describe things like the tone of the word, whether it’s big or small, if it’s colorful, etc. Words that are related to each other will have parameters of similar values. GPT-4 has 1.7 <i>trillion</i> parameters.
 		</li>
+			<img src="Parameters.png">
 		<li>
 			These vectors are processed through layers of transformations using mechanisms known as <b>attention</b> and feed-forward networks. This process allows the model to adjust the values of the parameters for each token based on all of the other tokens. This is what allows the AI to determine the context of how each word is used. In this example, the presence of the token <b>“AI”</b> updates the values of the token <b>“model”</b> from describing a fashion model to describing an AI model. 
-		<!-- Insert Photo Here -->
+			<img src="Attention.png">
 			This refinement process is repeated many times, gradually building a more contextually accurate representation of the input. GPT-4 is a 120 layer model, so this process is repeated 120 times. This number is relatively arbitrary - more layers improve the quality of the output, but with the payoff of a higher cost of compute.
 		</li>
 	  	<li>
 		  Now that the data is contextualized, the model presents a probability for what the most likely next token will be, and a token is selected from the list. Up until this point, the process is repeatable with exacting results. Given the same prompt, the model will come to this deterministic state, with the exact same next-token probabilities.
 	  	</li>
+		  <img src="That.png">
+		  <img src="Probabilities.png">
 		<li>
 			Next, a token is selected from the list. The token that is chosen isn’t always the most-likely token. If it was, the AI would produce consistent, and pretty boring results. A tuning mechanism known as <b>temperature</b> determines how likely the model is to deviate from choosing the top result. This is why the same prompt will produce varied responses.
 		</li>
 		<li>
 		  The selected token is appended to the text, and the process repeats until either an end of response token is generated, or a compute limit is reached.
 		</li>
+		  <img src="GreatQuestion.png">
       </ol>
 
 		<p>
@@ -220,6 +225,7 @@
 		<li>
 			The model is then shown a noisy image and a corresponding text prompt. It’s trained to predict the total noise that was added, and attempt to reconstruct the original image.
 		</li>
+		  <img src="GuessWho.png">
       </ol>
 
 		<p>
@@ -231,12 +237,12 @@
 		</li>
 		<li>
 			The dataset is arranged in a massive table, such that the images are on one axis, and the corresponding captions are on another. At this point, the data used for the images is random. Through training, it will be adjusted to usable values.
-
 		</li>
+		  <img src="ImageTable.png">
 		<li>
 			The diagonal of this table contains matching image-caption pairs. To correctly encode the context of the images, the model adjusts the image data so that it maximizes the similarities of the values along the diagonal, while minimizing the similarities elsewhere.
 		</li>
-
+		  <img src="Diagonals.png">
       </ol>
 
 		<p>
