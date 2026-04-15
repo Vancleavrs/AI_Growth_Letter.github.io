@@ -70,6 +70,10 @@
       margin-bottom: 30px;
     }
 
+	 .header-subtitle {
+      color: var(--muted);
+    }
+
     /* Collapsible Sections */
     details {
       background: var(--card);
@@ -310,7 +314,7 @@
 
 	<details>
       <summary>Energy Usage
-	  <p class="subtitle">Do your best to limit your personal footprint while recognizing that this is mainly a systemic issue.</p>
+	  <p class="header-subtitle">Do your best to limit your personal footprint while recognizing that this is mainly a systemic issue.</p>
 	  </summary>
 	  <p>
 		  Training large AI models requires significant computational resources, and running them at scale, known as inference, adds ongoing energy demands. The extent of this impact is difficult to measure accurately, as companies do not freely release this data. The best estimates come from concerted efforts to analyze and extrapolate data from smaller open-source models and hardware capabilities. Energy-per-prompt sounds like a straightforward metric for tracking the cost of inference, but it unfortunately breaks down quickly. Unknowable factors like the location of the data center processing the request, the time of day in that area, and number of concurrent requests from other users can cause the energy use to wildly fluctuate. Some prompts even require multiple subsequent prompts within the LLM to generate a response.
@@ -347,7 +351,7 @@
 	  
 	<details>
 	<summary>Slop
-	<p class="subtitle">Reputable information is getting harder to verify, so it's going to take more effort to stay well-informed.</p>
+	<p class="header-subtitle">Reputable information is getting harder to verify, so it's going to take more effort to stay well-informed.</p>
 	</summary>
    <p>
 	   AI-generated content is contributing to what some describe as a fragile information ecosystem. The rapid production of low-quality or misleading content (slop) blurs the line between authentic and generated material. This not only makes it harder to discern truth, but also creates feedback loops - where AI-generated content is used to train future models, potentially amplifying inaccuracies over time. These dynamics raise concerns about a “dead internet,” where human-generated content becomes increasingly diluted. Humans currently account for only 49% of internet traffic. With the rise of slop, consumers have a growing responsibility to regulate and validate their sources of truth.
@@ -357,7 +361,7 @@
 	  
 	<details>
 	<summary>AI in Education
-	<p class="subtitle">Recognize the cost of cognitive offloading.</p>
+	<p class="header-subtitle">Recognize the cost of cognitive offloading.</p>
 	</summary>
 	<p>
 		In the classroom, AI tools present both opportunities and challenges. While they can support learning, over-reliance may hinder the development of critical thinking and problem-solving skills. An increasing readiness to offload cognitive work, and the ease of generating answers contributes to academic dishonesty, undermining the value of assessments and credentials. Advancement and deployment of the technology is outpacing educators’ ability to adapt their curriculum to it.
@@ -366,7 +370,7 @@
 
 	<details>
 	<summary>AI Art
-	<p class="subtitle">There are some concerning ethics with current generative AI models.</p>
+	<p class="header-subtitle">There are some concerning ethics with current generative AI models.</p>
 	</summary>
 	  <p>
 		  Creative professionals face additional pressures, as generative tools can replicate styles and produce content at scale, often trained on copyrighted works without consent, credit, or compensation. Models can be trained to produce art in specific personal styles, and often have the artist’s name attached, again without their consent. This isn't limited to established artists either. As Steven Zapata puts it in his TEDx Talk, “I get messages from [the students] every day… they worry that they’re going to teach an AI system their style before they’ve had a chance to do anything good with it in the first place.” This raises questions not only about the economic impact of  but also about the erosion of creative confidence and identity. The optics of using AI generated content in professional settings are already trending negatively, but there is a cost with engaging and supporting such systems even for personal use. There may come a future where AI art is indistinguishable from human art, but it is not a future I’m personally striving for.
